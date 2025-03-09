@@ -39,7 +39,8 @@ Si deseas crear un contenedor Docker con la base de datos MySQL, puedes usar el 
 docker-compose -f docker-compose.yaml --env-file .env up -d
 ```
 
-> [!WARNING] Omite este paso si ya tienes una base de datos MySQL configurada.
+> [!WARNING]
+> Omite este paso si ya tienes una base de datos MySQL configurada.
 
 ## API
 
@@ -60,12 +61,12 @@ Crea una nueva tarea
 	</tr>
 	<tr>
 		<td>title</td>
-		<td >string <span style="color: red">required* </span></td>
+		<td >string <span>required* </span></td>
 		<td>Título de la tarea entre 3 y 255 caracteres</td>
 	</tr>
 	<tr>
 		<td>description</td>
-		<td >string <span style="color: red">required* </span></td>
+		<td >string <span>required* </span></td>
 		<td>Descripción de la tarea entre 3 y 255 caracteres</td>
 	</tr>
 </table>
@@ -165,7 +166,7 @@ Obtiene una tarea por su id
 	</tr>
 	<tr>
 		<td>id</td>
-		<td >number <span style="color: red">required* </span></td>
+		<td >number <span>required* </span></td>
 		<td>Id de la tarea, debe ser un número positivo</td>
 	</tr>
 </table>
@@ -208,7 +209,7 @@ Actualiza una tarea por su id
 	</tr>
 	<tr>
 		<td>id</td>
-		<td >number <span style="color: red">required* </span></td>
+		<td >number <span>required* </span></td>
 		<td>Id de la tarea, debe ser un número positivo</td>
 	</tr>
 </table>
@@ -285,7 +286,7 @@ Elimina una tarea por su id
 	</tr>
 	<tr>
 		<td>id</td>
-		<td >number <span style="color: red">required* </span></td>
+		<td >number <span>required* </span></td>
 		<td>Id de la tarea, debe ser un número positivo</td>
 	</tr>
 </table>
