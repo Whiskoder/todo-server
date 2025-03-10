@@ -36,10 +36,12 @@ const createTask = async (req: Request, res: Response) => {
     });
     await task.save();
     const { dataValues } = task;
-    res.status(200).json({
-      statusCode: 200,
+    res.status(201).json({
+      statusCode: 201,
       message: "Tarea creada correctamente",
-      task: dataValues,
+      data: {
+        tasks: [dataValues],
+      },
     });
   } catch (e) {
     console.log(e);
@@ -80,10 +82,13 @@ const getTasks = async (req: Request, res: Response) => {
       limit: limit.value ?? 100,
       offset: offset.value ?? 0,
     });
+
     res.status(200).json({
       statusCode: 200,
       message: "Tareas obtenidas correctamente",
-      tasks,
+      data: {
+        tasks,
+      },
     });
   } catch (e) {
     console.log(e);
@@ -120,7 +125,9 @@ const getTaskById = async (req: Request, res: Response) => {
     res.status(200).json({
       statusCode: 200,
       message: "Tarea obtenida correctamente",
-      task,
+      data: {
+        tasks: [task],
+      },
     });
   } catch (e) {
     console.log(e);
@@ -193,7 +200,9 @@ const updateTaskById = async (req: Request, res: Response) => {
     res.status(200).json({
       statusCode: 200,
       message: "Tarea actualizada correctamente",
-      task,
+      data: {
+        tasks: [task],
+      },
     });
   } catch (e) {
     console.log(e);
@@ -231,7 +240,7 @@ const deleteTaskById = async (req: Request, res: Response) => {
     }
     await task.destroy();
     res.status(200).json({
-      statusCode: 200,
+      statusCode: 204,
       message: "Tarea eliminada correctamente",
     });
   } catch (e) {

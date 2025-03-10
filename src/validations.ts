@@ -40,7 +40,7 @@ export const isString = (opts: {
     return { error: `'${name}' debe tener al menos ${minLength} caracteres` };
   if (maxLength && value.length > maxLength)
     return { error: `'${name}' debe tener menos de ${maxLength} caracteres` };
-  return { value };
+  return { value: value.trim() };
 };
 
 export const isEnum = (opts: {
